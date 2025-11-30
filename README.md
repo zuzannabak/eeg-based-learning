@@ -4,13 +4,7 @@ This project investigates whether EEG band-power features can predict a student'
 The work was completed as part of a Machine Learning course at Temple University.
 
 ## Tech Stack
-- **Python 3.10+**
-- NumPy, Pandas
-- Scikit-learn
-- XGBoost
-- Imbalanced-learn (SMOTE)
-- Matplotlib / Seaborn
-- Jupyter Notebook
+**Python 3.10+**, NumPy, Pandas, Scikit-learn, XGBoost, Imbalanced-learn (SMOTE), Matplotlib / Seaborn, Jupyter Notebook
 
 
 ## Project Overview
