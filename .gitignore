@@ -8,3 +8,7 @@ __pycache__/
 
 # VS Code
 .vscode/
+
+# Figures generated for the report
+figures/
+4_Boxplots_for_report.*

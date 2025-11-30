@@ -9,23 +9,23 @@ The work was completed as part of a Machine Learning course at Temple University
 
 ## Project Overview
 The goal was to classify **understood vs. not understood** based on short EEG segments.  
-Using a **subject-wise split**, I compared two model families:
+Using a **stratified train–test split** on EEG samples, I compared two model families:
 
 - **Feed-Forward Neural Network (FNN / MLPClassifier)**
 - **XGBoost**
 
 I also experimented with class imbalance strategies:
-- baseline  
+- original (no rebalancing)  
 - class weighting  
 - SMOTE  
 
 
 ## Key Findings
-- **FNN baseline** was the only model that learned a meaningful signal  
-  → ROC-AUC = **0.704**
-- **XGBoost baseline** achieved high accuracy  
-  → but AUC < 0.50 (predicts almost all samples as class 1)
-- Class weighting and SMOTE did **not** improve separability.
+- The **FNN with the original class distribution** reached ROC-AUC ≈ **0.70**  
+  → it makes somewhat better use of the power features, but still struggles with the minority class
+- The **XGBoost model** achieved the highest accuracy  
+  → but ROC-AUC \< 0.50 and it predicts almost all samples as class 1
+- Class weighting and SMOTE did **not** improve separability and often reduced ROC-AUC.
 
 Full results and confusion matrices are included in the final report.
 
@@ -35,17 +35,17 @@ Full results and confusion matrices are included in the final report.
 EEG-BASED-LEARNING/
 │
 ├── data/
-│ ├── raw/ # original EEG dataset (from Kaggle)
-│ └── processed/ # cleaned and preprocessed data
+│   ├── raw/          # original EEG dataset (from Kaggle)
+│   └── processed/    # cleaned and preprocessed data
 │
-├── 1_EDA.ipynb # exploratory data analysis
-├── 2_Modeling.ipynb # FNN + XGBoost modeling pipeline
-├── 3_ClassImbalance_FNN_XGBoost.ipynb # imbalance strategies
+├── 1_EDA.ipynb                    # exploratory data analysis
+├── 2_Modeling.ipynb               # FNN + XGBoost modeling pipeline
+├── 3_ClassImbalance_FNN_XGBoost.ipynb  # imbalance strategies
 │
-├── final_project_report.pdf # 4-page final ML report
+├── final_project_report.pdf       # 4-page final ML report
 └── requirements.txt
-```
 
+```
 
 
 ## Dataset
